@@ -28,6 +28,7 @@ Last time need to give password and after that it will be password less ssh logi
 
 **Please check after adding if all nodes could be login by ansisble through below commands:**
 > ansible -m ping all
+
 it will give you success message
 
 Now Run below ymls to configure Cluster:
