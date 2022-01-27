@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  labels:
+    tier: backend
+data:
+  config : |
+    upstream appcluster {
+     server 192.168.56.111:31050;
+     server 192.168.56.112:31005;
+     keepalive 1024;
+    }

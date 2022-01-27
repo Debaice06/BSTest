@@ -1,0 +1,63 @@
+[root@ansible BS]# ls
+all  Kubernetes_Master.yml  Kubernetes_Worker.yml  playbooks  roles
+[root@ansible BS]# ansible-playbook Kubernetes_Worker.yml --syntax-check
+[WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+playbook: Kubernetes_Worker.yml
+[root@ansible BS]# ansible-playbook Kubernetes_Worker.yml 
+[WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+PLAY [BS_Task2] *********************************************************************************************************************
+
+TASK [Kubernetes_Worker : Disabling Swap on all nodes] ******************************************************************************
+changed: [192.168.56.113]
+
+TASK [Kubernetes_Worker : Commenting Swap entries in /etc/fstab] ********************************************************************
+changed: [192.168.56.113]
+
+TASK [Kubernetes_Worker : Host File Will be Added] **********************************************************************************
+changed: [192.168.56.113]
+
+TASK [Kubernetes_Worker : Creating a repository file for Kubernetes] ****************************************************************
+changed: [192.168.56.113]
+
+TASK [Kubernetes_Worker : Adding repository details in Kubernetes repo file.] *******************************************************
+changed: [192.168.56.113]
+
+TASK [Kubernetes_Worker : disabling selinux] ****************************************************************************************
+changed: [192.168.56.113]
+
+TASK [Kubernetes_Worker : Changing sysctl settings] *********************************************************************************
+changed: [192.168.56.113]
+
+TASK [Kubernetes_Worker : Installing required packages] *****************************************************************************
+[DEPRECATION WARNING]: Invoking "yum" only once while using a loop via squash_actions is deprecated. Instead of using a loop to 
+supply multiple items and specifying `name: "{{ item }}"`, please use `name: '{{ packages }}'` and remove the loop. This feature 
+will be removed in version 2.11. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+changed: [192.168.56.113] => (item=[u'docker', u'kubeadm', u'kubectl'])
+
+TASK [Kubernetes_Worker : Starting and Enabling the required services] **************************************************************
+changed: [192.168.56.113] => (item=docker)
+changed: [192.168.56.113] => (item=kubelet)
+changed: [192.168.56.113] => (item=firewalld)
+
+TASK [Kubernetes_Worker : Allow Network Ports in Firewalld] *************************************************************************
+changed: [192.168.56.113] => (item=6443/tcp)
+changed: [192.168.56.113] => (item=10250/tcp)
+changed: [192.168.56.113] => (item=10251/tcp)
+changed: [192.168.56.113] => (item=10252/tcp)
+changed: [192.168.56.113] => (item=10255/tcp)
+
+TASK [Kubernetes_Worker : Enabling Bridge Firewall Rule] ****************************************************************************
+changed: [192.168.56.113]
+
+TASK [Kubernetes_Worker : Copying token to worker nodes] ****************************************************************************
+changed: [192.168.56.113]
+
+TASK [Kubernetes_Worker : Joining worker nodes with kubernetes master] **************************************************************
+changed: [192.168.56.113]
+
+PLAY RECAP **************************************************************************************************************************
+192.168.56.113             : ok=13   changed=13   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[root@ansible BS]# 

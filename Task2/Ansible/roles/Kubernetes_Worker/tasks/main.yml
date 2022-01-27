@@ -1,0 +1,9 @@
+---
+# Tasks Lists
+- import_tasks: prerequisites.yml
+- import_tasks: host_file_add.yml
+- import_tasks: setting_up_nodes.yml
+- import_tasks: configure_worker_nodes.yml
+
+
+

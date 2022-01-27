@@ -1,0 +1,14 @@
+pipeline {
+    agent {
+  label 'master'
+}
+
+stages {
+        stage('Deploy App1 app') {
+            steps {		
+			sshPublisher(publishers: [sshPublisherDesc(configName: '{Host_Publish_over_SSH}', transfers: [sshTransfer(cleanRemote: false, excludes: '', 
+			execCommand: 'kubectl -f app1deploy.yaml app1service.yaml', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'app1/deploy/*.yaml')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+			  }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+- name: Copying token to worker nodes
+  copy: src=./join_token dest=/opt/join_token
+
+- name: Joining worker nodes with kubernetes master
+  shell: |
+    cat /opt/join_token | tail -2 > out.sh
+    chmod 755 out.sh
+    sh out.sh
+  

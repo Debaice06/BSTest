@@ -1,0 +1,6 @@
+-
+  name: BS_Task2
+  hosts: kubernetes-master-nodes
+  roles:
+    - Kubernetes_Master
+

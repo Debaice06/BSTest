@@ -1,0 +1,29 @@
+---
+packages:
+- docker
+- kubeadm
+- kubectl
+
+
+services:
+- docker
+- kubelet
+- firewalld
+
+
+ports:
+- "6443/tcp"
+- "10250/tcp"
+- "10251/tcp"
+- "10252/tcp"
+- "10255/tcp"
+
+ad_addr: 192.168.56.110
+cidr_v: 10.244.0.0/16
+acc_name: debashis
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+- name: Install Kube DashBoard
+  command: kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml
+
+- name: Download metrics-server manifest to the cluster.
+  ansible.builtin.get_url:
+    url: https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+    dest: ~/metrics-server.yaml
+    mode: '0664'
+
+- name: Apply metrics-server manifest to the cluster.
+  kubernetes.core.k8s:
+    state: present
+    src: ~/metrics-server.yaml

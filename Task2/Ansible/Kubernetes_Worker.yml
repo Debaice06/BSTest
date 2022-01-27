@@ -1,0 +1,6 @@
+-
+  name: BS_Task2
+  hosts: kubernetes-worker-nodes
+  roles:
+    - Kubernetes_Worker
+
