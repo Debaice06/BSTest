@@ -21,5 +21,6 @@ If your repo is public, so no need for 'Credentials.'**
 If you don't use jenkins, you can deploy Like that after logging to Kubernetes Server.
 
 >kubectl apply -f BSTest/Task1/app1/deploy/app1deploy.yaml
+
 >kubectl apply -f BSTest/Task1/app1/deploy/app1service.yaml
 
