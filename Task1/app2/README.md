@@ -2,7 +2,9 @@
 
 **Image Build and Push to Repo**
 >docker build -t php .
+
 >docker tag php:7.0-apache deba153/bsapp2:latest
+
 >docker push deba153/bsapp2:latest
 
 Make sure Dockerfile and app src file is in same folder.
