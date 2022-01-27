@@ -2,8 +2,10 @@
 
 **First install ansible into control server**
 
-**How to configure password less conf in master nodes and worker nodes**
-From Master server run
+**Configure password less communication in master nodes and worker nodes**
+
+**From Master server run**
+
 >  ssh-keygen
 copy the content *id_rsa.pub* from ~/.ssh/
 Go To the worker node and run *ssh-keygen*.
