@@ -4,7 +4,7 @@
 **Please check if vagrant command is working or not by running this command**
 > vagrant --version
 
-**After that Create vagrant file for Master and Two Nodes. Please go to Master and then run below command:**
+**After that Create vagrant file for Master and Two worker Nodes. Please go to Master and then run below command:**
 > vagrant up
 
 **It takes time if Master is setup then node will take less time. After installing centOS, please run below command:**
