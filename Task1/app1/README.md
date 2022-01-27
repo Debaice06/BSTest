@@ -1,6 +1,6 @@
 # App 1 Image Build and Deploy in Cluster with YAML
 
-** Image Build and Push to Repo
+**Image Build and Push to Repo**
 >docker build -t php .
 >docker tag php:7.0-apache deba153/bsapp1:latest
 >docker push deba153/bsapp1:latest
