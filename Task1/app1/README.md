@@ -7,8 +7,9 @@
 
 Make sure Dockerfile and app src file is in same folder.
 
-**Node Selection
-To select the node selector we need to label the nodes
+**Node Selection**
+
+**To select the node selector we need to label the nodes**
 
 >kubectl label nodes hostname app1-deploy=true --overwrite
 
