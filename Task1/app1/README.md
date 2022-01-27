@@ -16,7 +16,7 @@ Make sure Dockerfile and app src file is in same folder.
 **Image Deploy
 Here we have used jenkinsfile, so create a Pipeline project and set definition "Pipeline Script From SCM"
 set your Repo URL and Script Path "JenkinsFile"
-If your repo is public, so no need for 'Credentials.'
+If your repo is public, so no need for 'Credentials.'**
 
 If you don't use jenkins, you can deploy Like that after logging to Kubernetes Server.
 
