@@ -4,6 +4,9 @@
 **Please check if vagrant command is working or not by running this command**
 > vagrant --version
 
+**For initialize please run the folloiwng command**
+> vagrant init
+
 **After that Create vagrant file for Master and Two worker Nodes. Please go to Master and then run below command:**
 > vagrant up
 
